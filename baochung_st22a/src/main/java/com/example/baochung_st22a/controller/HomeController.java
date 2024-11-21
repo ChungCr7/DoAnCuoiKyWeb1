@@ -91,9 +91,9 @@ public class HomeController {
 		return "login";
 	}
 
-	@GetMapping("/register")
-	public String register() {
-		return "register";
+	@GetMapping("/signup")
+	public String signup() {
+		return "signup";
 	}
 
 	@GetMapping("/products")
@@ -159,13 +159,13 @@ public class HomeController {
 //					System.out.println(path);
 					Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 				}
-				session.setAttribute("succMsg", "Register successfully");
+				session.setAttribute("succMsg", "Signup successfully");
 			} else {
 				session.setAttribute("errorMsg", "something wrong on server");
 			}
 		}
 
-		return "redirect:/register";
+		return "redirect:/signup";
 	}
 
 //	Forgot Password Code 

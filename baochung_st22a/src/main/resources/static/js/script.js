@@ -1,10 +1,10 @@
 $(function(){
 
-	// User Register validation
+	// User signup validation
 
-	var $userRegister=$("#userRegister");
+	var $userSignup=$("#userSignup");
 
-	$userRegister.validate({
+	$userSignup.validate({
 
 		rules:{
 			name:{
