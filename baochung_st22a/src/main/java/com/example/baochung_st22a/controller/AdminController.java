@@ -426,7 +426,7 @@ public class AdminController {
 //				System.out.println(path);
 				Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 			}
-			session.setAttribute("succMsg", "Sigup successfully");
+			session.setAttribute("succMsg", "Register successfully");
 		} else {
 			session.setAttribute("errorMsg", "something wrong on server");
 		}
