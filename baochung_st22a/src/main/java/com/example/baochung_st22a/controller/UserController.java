@@ -113,7 +113,7 @@ public class UserController {
 		m.addAttribute("carts", carts);
 		if (carts.size() > 0) {
 			Double orderPrice = carts.get(carts.size() - 1).getTotalOrderPrice();
-			Double totalOrderPrice = carts.get(carts.size() - 1).getTotalOrderPrice() + 250 + 100;
+			Double totalOrderPrice = carts.get(carts.size() - 1).getTotalOrderPrice() + 30000;
 			m.addAttribute("orderPrice", orderPrice);
 			m.addAttribute("totalOrderPrice", totalOrderPrice);
 		}
