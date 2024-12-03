@@ -179,9 +179,9 @@ public class UserController {
 	public String updateProfile(@ModelAttribute UserDtls user, @RequestParam MultipartFile img, HttpSession session) {
 		UserDtls updateUserProfile = userService.updateUserProfile(user, img);
 		if (ObjectUtils.isEmpty(updateUserProfile)) {
-			session.setAttribute("errorMsg", "Profile not updated");
+			session.setAttribute("errorMsg", "Hồ sơ chưa được cập nhật");
 		} else {
-			session.setAttribute("succMsg", "Profile Updated");
+			session.setAttribute("succMsg", "Đã cập nhật hồ sơ");
 		}
 		return "redirect:/user/profile";
 	}

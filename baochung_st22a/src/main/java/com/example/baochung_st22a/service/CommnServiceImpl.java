@@ -12,6 +12,7 @@ public class CommnServiceImpl implements CommonService {
 
 	@Override
 	public void removeSessionMessage() {
+		@SuppressWarnings("null")
 		HttpServletRequest request = ((ServletRequestAttributes) (RequestContextHolder.getRequestAttributes()))
 				.getRequest();
 		HttpSession session = request.getSession();

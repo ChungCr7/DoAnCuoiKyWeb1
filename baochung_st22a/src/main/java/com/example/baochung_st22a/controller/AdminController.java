@@ -129,6 +129,7 @@ public class AdminController {
 
 				File saveFile = new ClassPathResource("static/img").getFile();
 
+				@SuppressWarnings("null")
 				Path path = Paths.get(saveFile.getAbsolutePath() + File.separator + "category_img" + File.separator
 						+ file.getOriginalFilename());
 
@@ -443,9 +444,9 @@ public class AdminController {
 	public String updateProfile(@ModelAttribute UserDtls user, @RequestParam MultipartFile img, HttpSession session) {
 		UserDtls updateUserProfile = userService.updateUserProfile(user, img);
 		if (ObjectUtils.isEmpty(updateUserProfile)) {
-			session.setAttribute("errorMsg", "Profile not updated");
+			session.setAttribute("errorMsg", "Hồ sơ chưa được cập nhật");
 		} else {
-			session.setAttribute("succMsg", "Profile Updated");
+			session.setAttribute("succMsg", "Đã cập nhật hồ sơ");
 		}
 		return "redirect:/admin/profile";
 	}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="vi" xmlns:th="http://www.thymeleaf.org"
 	th:replace="~{base::layout(~{::section})}">
 <head>
 	<meta charset="UTF-8">
@@ -11,7 +11,7 @@
 
 			<div class="card card-sh">
 				<div class="card-header text-center">
-					<p class="fs-4">Cart Page</p>
+					<p class="fs-4">Giỏ Hàng</p>
 					<th:block th:if="${session.succMsg}">
 						<p class="text-success fw-bold">[[${session.succMsg}]]</p>
 						<th:block th:text="${@commnServiceImpl.removeSessionMessage()}"></th:block>
@@ -26,12 +26,12 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Sl No</th>
-								<th scope="col">Image</th>
-								<th scope="col">Product Name</th>
-								<th scope="col">Price</th>
-								<th scope="col" class="text-center">Quantity</th>
-								<th scope="col">Total Price</th>
+								<th scope="col">STT</th>
+								<th scope="col">Hình Ảnh</th>
+								<th scope="col">Tên Sản Phẩm</th>
+								<th scope="col">Giá</th>
+								<th scope="col" class="text-center">Số Lượng</th>
+								<th scope="col">Tổng Giá</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -43,24 +43,24 @@
 								<td>[[${cart.product.title}]]</td>
 								<td>[[${cart.product.discountPrice}]]</td>
 								<td class="text-center"><a
-									th:href="@{'/user/cartQuantityUpdate?sy=de&cid='+${cart.id}}">
-										<i class="fa-solid fa-minus"></i>
+									th:href="@{'/user/cartQuantityUpdate?sy=de&cid='+${cart.id}}"><i
+										class="fa-solid fa-minus"></i>
 								</a> [ [[${cart.quantity}]] ] <a
-									th:href="@{'/user/cartQuantityUpdate?sy=in&cid='+${cart.id}}">
-										<i class="fa-solid fa-plus"></i>
+									th:href="@{'/user/cartQuantityUpdate?sy=in&cid='+${cart.id}}"><i
+										class="fa-solid fa-plus"></i>
 								</a></td>
 								<td>[[${cart.totalPrice}]]</td>
 							</tr>
 							<tr>
 								<td colspan="4"></td>
-								<td class="fw-bold">Total Price</td>
-								<td class="fw-bold">&#8363; [[${totalOrderPrice}]]</td>
+								<td class="fw-bold">Tổng Giá</td>
+								<td class="fw-bold">[[${totalOrderPrice}]] &#8363</td>
 							</tr>
 
 						</tbody>
 					</table>
 					<div class="text-center">
-						<a href="/user/orders" class="btn btn-warning"> Proceed Payment</a>
+						<a href="/user/orders" class="btn btn-warning">Thanh Toán</a>
 					</div>
 				</div>
 			</div>
