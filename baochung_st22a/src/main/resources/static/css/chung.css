@@ -698,3 +698,8 @@ Single Product section style start
 .text-cubi{
   color: #ff0000;
 }
+.big-price {
+  font-size: 2rem; /* Kích thước chữ lớn hơn */
+  font-weight: bold; /* Đậm chữ */
+  color: #000; /* Màu sắc (nếu cần) */
+}
