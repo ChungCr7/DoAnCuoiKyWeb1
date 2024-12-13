@@ -181,11 +181,17 @@
 											</p>
 										</div>
 
-
 										<div class="d-flex flex-wrap mt-3">
-											<a class="btn-cart me-3 px-4 pt-3 pb-3">
-												<h5 class="text-uppercase m-0">Add to Cart</h5>
-											</a>
+											<th:block th:if="${p.stock > 0}">
+												<th:block th:if="${user == null}">
+													<a href="/signin" class="btn-cart me-3 px-4 pt-3 pb-3">Add To Cart</a>
+												</th:block>
+											
+												<th:block th:unless="${user == null}">
+													<a th:href="@{'/user/addCart?pid=' + ${p.id} + '&uid=' + ${user.id}}"
+													   class="btn-cart me-3 px-4 pt-3 pb-3">Add To Cart</a>
+												</th:block>
+											</th:block>
 											<a class="btn-wishlist px-4 pt-3 ">
 												<iconify-icon icon="fluent:heart-28-filled" class="fs-5"></iconify-icon>
 											</a>
